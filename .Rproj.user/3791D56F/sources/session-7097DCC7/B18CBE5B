@@ -1,0 +1,27 @@
+{
+    "id": "B18CBE5B",
+    "path": "~/Documents/github/dashboards/gss-kpi/test.R",
+    "project_path": "test.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1660169128372.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "85,19",
+        "scrollLine": "68",
+        "marks": "<:0,16\n>:1,16"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1660169167,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1660169167183,
+    "read_only": false,
+    "read_only_alternatives": []
+}
