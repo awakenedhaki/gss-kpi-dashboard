@@ -60,7 +60,6 @@ generateFullYearCommitteeEntry <- function(committee.name) {
   ))
 }
 
-
 # GENERATING DATA FRAME ========================================================
 committee.names <- factor(as.character(1:10), levels=as.character(1:10))
 tmp <- bind_rows(lapply(committee.names, FUN = generateFullYearCommitteeEntry))
@@ -69,14 +68,14 @@ summarized.committees <- tmp %>%
   group_by(committee.name) %>%
   summarize(
     meeting.compliance.ratio = sum(actual.nmeetings) / sum(expected.nmeetings),
-    meeting.quorum = sum(as.numeric(met.quorum)) / n(),
-    submitted.minutes = sum(as.numeric(submitted.minutes)) / n(),
-  	submitted.council.update = sum(as.numeric(submitted.council.update)) / n(),
-  	completed.council.submission = sum(as.numeric(completed.council.submission)) / n(),
-  	reason.no.meeting = sum(as.numeric(reason.no.meeting)) / n(),
-  	reason.no.quorum = sum(as.numeric(reason.no.quorum)) / n(),
-  	reason.no.minutes = sum(as.numeric(reason.no.minutes)) / n(),
-  	reason.no.council.update = sum(as.numeric(reason.no.council.update)) / n()
+    meeting.quorum = mean(as.numeric(met.quorum)),
+    submitted.minutes = mean(as.numeric(submitted.minutes)),
+  	submitted.council.update = mean(as.numeric(submitted.council.update)),
+  	completed.council.submission = mean(as.numeric(completed.council.submission)),
+  	reason.no.meeting = mean(as.numeric(reason.no.meeting)),
+  	reason.no.quorum = mean(as.numeric(reason.no.quorum)),
+  	reason.no.minutes = mean(as.numeric(reason.no.minutes)),
+  	reason.no.council.update = mean(as.numeric(reason.no.council.update))
   )
 
 summarized.committees %>%
@@ -93,9 +92,6 @@ summarized.committees %>%
     theme_clean() +
     theme(legend.position = 'none')
 
-
-mosaicplot(table(tmp$met.quorum, tmp$actual.nmeetings))
-mosaicplot(table(tmp$submitted.minutes, tmp$actual.nmeetings))
 
 
 
